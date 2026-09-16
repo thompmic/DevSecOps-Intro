@@ -3,7 +3,7 @@
 CPS 5981 01, Week 02
 
 **Fork:** https://github.com/thompmic/DevSecOps-Intro
-**Commit:** _not answered_
+**Commit:** 23d65195da19336866623dd5e5ed6e23e809327c
 **Visibility:** Public
 **Collaborators:** none
 **Declared AI use:** Claude was used for wording and structure on the abuse cases, the written analysis and Analysis Memo 2. The system observations, the trust-boundary judgements, the mission statement and the mission effects are my own, from running the target in step 1.
