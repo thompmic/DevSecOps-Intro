@@ -1,0 +1,44 @@
+# CPS 5981 · Unit 07 · Resilience Engineering lab target
+# Two Juice Shop replicas behind one edge proxy. Every /api and /rest call is
+# checked against a token-introspection service ("idp") before it reaches a replica.
+# Localhost only. Nothing here is production, and nothing here costs money.
+name: u07
+
+# Fixed addresses so a restarted container comes back where the edge expects it.
+networks:
+  lab:
+    ipam:
+      config:
+        - subnet: 172.28.7.0/24
+
+services:
+  juice-a:
+    image: bkimminich/juice-shop:v20.0.0
+    restart: "no"          # a stopped replica must stay stopped during an experiment
+    expose: ["3000"]
+    networks: { lab: { ipv4_address: 172.28.7.11 } }
+
+  juice-b:
+    image: bkimminich/juice-shop:v20.0.0
+    restart: "no"
+    expose: ["3000"]
+    networks: { lab: { ipv4_address: 172.28.7.12 } }
+
+  idp:
+    image: nginx:stable-alpine
+    restart: "no"
+    expose: ["8081"]
+    networks: { lab: { ipv4_address: 172.28.7.20 } }
+    volumes:
+      - ./idp/idp.conf:/etc/nginx/conf.d/default.conf:ro
+
+  edge:
+    image: nginx:stable-alpine
+    restart: "no"
+    depends_on: [juice-a, juice-b, idp]
+    networks: { lab: { ipv4_address: 172.28.7.2 } }
+    ports:
+      - "127.0.0.1:8080:80"   # localhost only, never 0.0.0.0
+    volumes:
+      - ./edge/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./logs:/var/log/nginx:rw
