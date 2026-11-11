@@ -1,0 +1,12 @@
+# Resolved image digests for the Unit 07 lab target.
+# Captured after the experiment set as the baseline for the supply-chain check
+# recommended in Analysis Memo 7. Re-capture on each run and diff against this file:
+#   docker image inspect <ref> --format '{{index .RepoDigests 0}}'
+# A digest that moves while docker-compose.yml is unchanged in git is the finding.
+# Captured: 2026-11-11T20:33:05Z
+
+service,image_ref_in_compose,resolved_digest
+juice-a,bkimminich/juice-shop:v20.0.0,bkimminich/juice-shop@sha256:fd58bdc9745416afce8184ee0666278a436574633ea7880365153a63bfd418b0
+juice-b,bkimminich/juice-shop:v20.0.0,bkimminich/juice-shop@sha256:fd58bdc9745416afce8184ee0666278a436574633ea7880365153a63bfd418b0
+idp,nginx:stable-alpine,nginx@sha256:583b7f2fce1cdb8da5ad5c39ebd3c33b98b87d493190e548bdee1fa8c619c311
+edge,nginx:stable-alpine,nginx@sha256:583b7f2fce1cdb8da5ad5c39ebd3c33b98b87d493190e548bdee1fa8c619c311

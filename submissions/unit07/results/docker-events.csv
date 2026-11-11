@@ -1,0 +1,43 @@
+1794426825,kill,u07-juice-a-1
+1794426830,die,u07-juice-a-1
+1794426830,stop,u07-juice-a-1
+1794426895,start,u07-juice-a-1
+1794427064,kill,u07-idp-1
+1794427066,stop,u07-idp-1
+1794427066,die,u07-idp-1
+1794427134,start,u07-idp-1
+1794427273,pause,u07-idp-1
+1794427336,unpause,u07-idp-1
+1794427597,kill,u07-idp-1
+1794427598,stop,u07-idp-1
+1794427598,die,u07-idp-1
+1794427742,start,u07-idp-1
+1794427749,pause,u07-idp-1
+1794427813,unpause,u07-idp-1
+1794427870,exec_create: wget -qO- --timeout=3 http://idp:8081/health,u07-edge-1
+1794427870,exec_start: wget -qO- --timeout=3 http://idp:8081/health,u07-edge-1
+1794427870,exec_die,u07-edge-1
+1794427892,pause,u07-idp-1
+1794427967,unpause,u07-idp-1
+1794428159,exec_create: nginx -t,u07-edge-1
+1794428159,exec_start: nginx -t,u07-edge-1
+1794428159,exec_die,u07-edge-1
+1794428160,exec_create: nginx -s reload,u07-edge-1
+1794428160,exec_start: nginx -s reload,u07-edge-1
+1794428160,exec_die,u07-edge-1
+1794428215,exec_create: nginx -t,u07-edge-1
+1794428215,exec_start: nginx -t,u07-edge-1
+1794428215,exec_die,u07-edge-1
+1794428216,exec_create: nginx -s reload,u07-edge-1
+1794428216,exec_start: nginx -s reload,u07-edge-1
+1794428216,exec_die,u07-edge-1
+1794428256,exec_create: nginx -t,u07-edge-1
+1794428256,exec_start: nginx -t,u07-edge-1
+1794428256,exec_die,u07-edge-1
+1794428257,exec_create: nginx -s reload,u07-edge-1
+1794428257,exec_start: nginx -s reload,u07-edge-1
+1794428257,exec_die,u07-edge-1
+1794428312,pause,u07-idp-1
+1794428379,unpause,u07-idp-1
+1794428491,pause,u07-idp-1
+1794428514,unpause,u07-idp-1

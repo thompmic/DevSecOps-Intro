@@ -1,0 +1,7 @@
+# Gated-route check during the E2b fault condition (idp paused), after the Task 4 change.
+# Shows the carve-out is route-scoped: public reads survive, authenticated routes still fail closed.
+ts,endpoint,gated,status,seconds
+2026-11-11T20:21:33Z,/api/Products,no,200,0.045702
+2026-11-11T20:21:33Z,/rest/admin/application-configuration,no,200,0.010923
+2026-11-11T20:21:33Z,/rest/user/whoami,yes,500,10.012853
+2026-11-11T20:21:43Z,/rest/basket/1,yes,500,10.010818
